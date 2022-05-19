@@ -37,8 +37,7 @@ body{
     padding:0 10px;
 }
 .input{
-    
-    width:100%;
+    width:100%; 
     margin-left: 20%;   /*  change here */
     
 }
@@ -56,7 +55,7 @@ body{
 
 .index_input{
     height:30px;
-   
+	width: 600px;
     outline: none;
     border:none;
     padding: 10px;
