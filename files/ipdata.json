@@ -1,0 +1,28 @@
+{
+    "0":{
+        "img":"images/01.png",
+        "name":"Search in Shodan.io",
+        "link":"https://www.shodan.io/search?query=domainname"
+    },
+    "1":{
+        "img":"images/02.png",
+        "name":"Robot txt",
+        "link":"https://www.google.com/search?q=domainname+robots.txt"
+    },
+    "2":{
+        "img":"images/03.png",
+        "name":"Virus Total (IP)",
+        "link":"https://www.virustotal.com/gui/ip-address/domainname"
+    },
+    "3":{
+        "img":"images/05.png",
+        "name":"IPVOID (Manual Search)",
+        "link":"https://www.ipvoid.com/"
+    },
+    "4":{
+        "img":"images/06.svg",
+        "name":"AbuseIPDB (IP)",
+        "link":"https://www.abuseipdb.com/check/domainname"
+    }
+	
+}

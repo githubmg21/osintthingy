@@ -7,14 +7,25 @@
     <link rel="stylesheet" href="./files/index.css">
     <title>Investigator </title>
     <meta name="description" content="Quick OSINT search for Domains, IP's, and Hash.">
-    <meta name="keywords" content="recon, robot.txt,open reirect, login pages, crt.sh, wordpress scan, pastebin entries, find cms,search amazon s3 bucket, github search, reverse ip etc">
+    <meta name="keywords" content="osint, ip search, domain search, hash search, recon, robot.txt,open reirect, login pages, crt.sh, wordpress scan, pastebin entries, find cms,search amazon s3 bucket, github search, reverse ip etc">
     <link rel="icon" type="image/ico" href="https://www.digital.security/en/sites/default/files/imce/images/00.png"/>
     
-    <!--
+    
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KF749ZL');</script>
+	<!-- End Google Tag Manager -->
 
-	-->
 </head>
 <body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF749ZL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
     <div class="headtitle">
 		<h1>OSINT Thingy helps quickly check domain, IP and Hash information.</h1>
 		<p>Hash search with only work with Cards having (Hash) in the title.</p>
@@ -28,20 +39,14 @@
         <h2 class="head_title">OSINT Thingy</h2>
         <p class="head_down">An OSINT Tool</p>
         </div>
-        
-        <div class="input">
-        <div class='in_div'>
-            <img class="search" src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png"/>
-            <input class="index_input" id="index_input" type="text" onchange="textch(this.value)" placeholder="IP, Domain, Hash"/>
-            
-        </div>
-        
 		
-        </div>
+		
+		<div>
+	
 		</div>
         
 		
-        </div>
+    </div>
 		
 		<!--
 		<div class="head_button">
@@ -50,12 +55,75 @@
 		</div>
 		-->
     </div>
-   
-    <div class="cards" id="cards">
+   </div>
+	<p>Click the buttons inside the tabbed menu for each search:</p>
+
+	<div class="tab">
+	  <button class="tablinks" onclick="openSearch(event, 'IP-Search')">IP Search</button>
+	  <button class="tablinks" onclick="openSearch(event, 'Domain-Search')">Domain Search</button>
+	  <button class="tablinks" onclick="openSearch(event, 'Hash-Search')">Hash Search</button>
+	</div>
+
+
+	<div id="IP-Search" class="tabcontent">
+		<div class='in_div'>
+			<img class="search" src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png"/>
+			<input class="index_input" id="ip_input" type="text" onchange="iptextch(this.value)" placeholder="IP"/>
+		
+		</div>
+		<div class="cards" id="ipcards">
+		<script type="text/javascript" src="./files/ipindex.js"></script>
+		</div>
+
+	</div>
+
+
+
+	<div id="Domain-Search" class="tabcontent">
+		<div class='in_div'>
+			<img class="search" src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png"/>
+			<input class="index_input" id="dom_input" type="text" onchange="domtextch(this.value)" placeholder="Domain"/>
+		
+		</div>
+
+		<div class="cards" id="domcards">
+			<script type="text/javascript" src="./files/domindex.js"></script>
+		</div>
+	</div>
+
+
+
+	<div id="Hash-Search" class="tabcontent">
+		<div class='in_div'>
+			<img class="search" src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png"/>
+			<input class="index_input" id="hash_input" type="text" onchange="hashtextch(this.value)" placeholder="Hash"/>
+		
+		</div>
+		
+		<div class="cards" id="hashcards">
+			<script type="text/javascript" src="./files/hashindex.js"></script>
+		</div>
+
+	</div>
+
+
+	<script>
+	function openSearch(evt, searchType) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(searchType).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}
+	</script>
         
-    </div>
-   
-    </div>
+
     
     <p class="footer"><a href="https://github.com/githubmg21/osintthingy">OSINT Thingy</a> <span>by</span> <a href="https://github.com/githubmg21">githubmg21</a></p>
 	</div>
@@ -63,6 +131,7 @@
 	<h1 class="mobile"><span style="font-size:25px;color:red;">Investigator</span> <br> USE A LARGER SCREEN PLEASE</h1>
 	<div class="actual">
 	</body>
-	<script type="text/javascript" src="./files/index.js"></script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	</html>
+
+
